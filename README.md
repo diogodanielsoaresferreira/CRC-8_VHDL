@@ -4,6 +4,7 @@ Project presented in the Advanced Computer Architectures course (Universidade de
 
 THe main goal of the project is to design different possible solutions in hardware, using VHDL, to encode and decode CRC-8 strings using the least possible number of components and with an optimal delay.
 
+# Versions presented
 
 4 versions were made, with encoder, decoder, system design and test vector.
 The most optimized version is the version 4 (V4).
