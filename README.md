@@ -12,12 +12,12 @@ It was also included the script used to optimize the used gates, with the calcul
 
 Below are presented the delay times and the number of ports in each versions:
 
-V1:
+##V1:
 Version with CRC polynomial processed in series
 Each block of xor0s is applied to all 16 bits
 
 
-Encoder:
+###Encoder:
 Block delay -> 2ns
 Overall delay -> 2*16=32 ns
 
@@ -25,7 +25,7 @@ Number of ports:
 Each xor block has 6 xor's.
 6*16 = 96
 
-Checker:
+###Checker:
 Overall encoder delay + final Nor:
 32+6=38 ns
 
@@ -33,7 +33,7 @@ Number of ports:
 Encoder ports + checker_8bit ports:
 96+7=103
 
-V2:
+##V2:
 Synchronous version, with clock and shift register.
 
 Encoder:
