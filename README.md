@@ -36,7 +36,7 @@ Encoder gates + checker_8bit gates:
 ## V2:
 Synchronous version, with clock and shift register.
 
-Encoder:
+### Encoder:
 Delay for each clock cycle:
 Multiplexer delay + CRC calculation delay:
 4+2=6ns
@@ -53,7 +53,7 @@ Number of gates (without register and counter gates):
 23*Mux gates + Remainder_CRC8 gates + Compare15 gates=
 23*3+6+3=81
 
-Checker:
+### Checker:
 Overall encoder delay + final Nor:
 108+8=116 ns
 
