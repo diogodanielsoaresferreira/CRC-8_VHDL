@@ -10,30 +10,30 @@ THe main goal of the project is to design different possible solutions in hardwa
 The most optimized version is the version 4 (V4).
 It was also included the script used to optimize the used gates, with the calculation of Xor combinations of the used bits in each gate.
 
-Below are presented the delay times and the number of ports in each versions:
+Below are presented the delay times and the number of gates in each versions:
 
-##V1:
+## V1:
 Version with CRC polynomial processed in series
 Each block of xor0s is applied to all 16 bits
 
 
-###Encoder:
+### Encoder:
 Block delay -> 2ns
 Overall delay -> 2*16=32 ns
 
-Number of ports:
+Number of gates:
 Each xor block has 6 xor's.
 6*16 = 96
 
-###Checker:
+### Checker:
 Overall encoder delay + final Nor:
 32+6=38 ns
 
-Number of ports:
-Encoder ports + checker_8bit ports:
+Number of gates:
+Encoder gates + checker_8bit gates:
 96+7=103
 
-##V2:
+## V2:
 Synchronous version, with clock and shift register.
 
 Encoder:
@@ -49,7 +49,7 @@ The clock must be 6ns.
 2 cycles needed for the initial load:
 Overall delay: 18*6=108 ns
 
-Gates number (without register and counter gates):
+Number of gates (without register and counter gates):
 23*Mux gates + Remainder_CRC8 gates + Compare15 gates=
 23*3+6+3=81
 
@@ -61,44 +61,44 @@ Number of gates:
 Encoder gates + checker_8bit gates:
 81+8=89
 
-V3:
-Versão com bits do CRC calculados tendo em conta as várias componentes do resto da divisão dos bits de entrada pelo polinómio gerador.
+## V3:
+Version with CRC bits calculated taking into account the components of the remainder of the division of the input bits by the generating polynomial.
 
-Encoder:
-Atraso máximo do bloco é o atraso máximo dos blocos para cada bit (xors com o CRC são efetuados em paralelo):
+### Encoder:
+Maximum block delay is the maximum block delay for each bit (xors with CRC are done in paralell):
 8 ns.
 
-Nº de portas é a soma de todos os xors utilizados nos blocos para cada bit:
+Number of gates is the sum of all xors used in the blocks for each bit:
 64
 
-Checker:
-Atraso total do encoder (xors com o CRC são efetuados em paralelo) + Nor final:
+### Checker:
+Overal encoder delay (xors with CRC are done in paralell) + final Nor:
 8+6=14 ns
 
-Nº de portas:
-Nº de portas do encoder + nº de portas para o Xor com o CRC + nº de portas do check8 final:
+Number of gates:
+Encoder gates + Xor gates with CRC + final check8 gates:
 64+8+7=79
 
 
-V4:
-V3 otimizada, com menos portas lógicas devido ao cálculo de combinações
+## V4:
+Optimized V3, with lesser gates due to the combinations calculations
 
-Encoder:
+### Encoder:
 
-Atraso:
+Delay:
 8 ns
 
-Nº de portas:
-38 portas lógicas
+Number of gates
+38 gates
 
-Checker:
+### Checker:
 
-Atraso:
-Atraso do encoder + Atraso do check_8=
+Delay:
+Encoder delay + check_8 delay
 8+6=14ns
 
-Nº de portas:
-38+8(é necessário xor com bits do CRC)+7(para calcular o check_crc)=
+Number of gates:
+38+8(It is needed an Xor with the CRC bits)+7(to calculate check_crc)=
 38+8+7=53
 
 Diogo Ferreira  
